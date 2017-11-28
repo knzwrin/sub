@@ -1,7 +1,5 @@
 package com.internousdev.sub.action;
 
-/*import java.util.Arrays;*/
-/*import org.apache.commons.lang3.ArrayUtils;*/
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -76,15 +74,22 @@ public class StringSample {
 
 
 //		郵便番号判定に使う
-		String str3 = "120-0015";
-		String regex1 = "\\d";
-		String regex2 = "[-]";
-		Pattern p1 = Pattern.compile(regex1);
-		Matcher m1 = p1.matcher(str3);
-		Pattern p2 = Pattern.compile(regex2);
-		Matcher m2 = p2.matcher(str3);
-		System.out.println(m1.find());
-		System.out.println(m2.find());
+		String postalcode = "120-0015";
+		String regex = "^\\d{3}-\\d{4}$";
+		Pattern p = Pattern.compile(regex);
+		Matcher m = p.matcher(postalcode);
+		System.out.println(m.find());
+//		http://java-reference.com/java_string_regex.htmlを確認
+//		郵便番号にマッチ
+//		半角数値3桁、半角ハイフン、半角数値4桁
+//		String regex1 = "\\d";
+//		String regex2 = "[-]";
+//		Pattern p1 = Pattern.compile(regex1);
+//		Matcher m1 = p1.matcher(str3);
+//		Pattern p2 = Pattern.compile(regex2);
+//		Matcher m2 = p2.matcher(str3);
+//		System.out.println(m1.find());
+//		System.out.println(m2.find());
 
 	}
 }
